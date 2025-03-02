@@ -1,5 +1,5 @@
 # cargo_lift_calculator.py
-#Version 1.0.0
+#Version 1.0.1
 
 class CargoLiftCalculator:
     def __init__(self):
@@ -26,7 +26,7 @@ class CargoLiftCalculator:
             return cost
 
         # Calculate additional cost for manual lifting
-        additional_cost = 300 * (floor - 1) * (weight // 100 + 1)
+        additional_cost = 350 * (floor - 1) * (weight // 100 + 1)
         total_cost = cost + additional_cost
 
         return total_cost
