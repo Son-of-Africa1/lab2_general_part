@@ -1,6 +1,7 @@
 # cargo_lift_calculator.py
 #Version 1.0.1
 #Bug fix; Additional weight to 400
+#Conflict resolved
 
 class CargoLiftCalculator:
     def __init__(self):
