@@ -1,4 +1,5 @@
 # cargo_lift_calculator.py
+#Version 1.0.0
 
 class CargoLiftCalculator:
     def __init__(self):
