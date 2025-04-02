@@ -1,0 +1,25 @@
+From 10dac8eae9167f73bb7ea7dc266c180ab000e7e6 Mon Sep 17 00:00:00 2001
+From: Mawwy <mavince145@gmail.com>
+Date: Sun, 2 Mar 2025 16:37:01 +0300
+Subject: [PATCH 2/2] Resolved conflict: Kept manual lifting cost multiplier as
+ 400
+
+---
+ cargo_lift_calculator.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/cargo_lift_calculator.py b/cargo_lift_calculator.py
+index 88c2c81..2df53dd 100644
+--- a/cargo_lift_calculator.py
++++ b/cargo_lift_calculator.py
+@@ -1,6 +1,7 @@
+ # cargo_lift_calculator.py
+ #Version 1.0.1
+ #Bug fix; Additional weight to 400
++#Conflict resolved
+ 
+ class CargoLiftCalculator:
+     def __init__(self):
+-- 
+2.48.1.windows.1
+
