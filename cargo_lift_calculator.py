@@ -28,7 +28,6 @@ class CargoLiftCalculator:
             return cost
 
         # Calculate additional cost for manual lifting
-        additional_cost = 350 * (floor - 1) * (weight // 100 + 1)
         additional_cost = 400 * (floor - 1) * (weight // 100 + 1)
         total_cost = cost + additional_cost
 
