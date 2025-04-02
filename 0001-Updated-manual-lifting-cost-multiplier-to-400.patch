@@ -1,0 +1,70 @@
+From 5b8407559ed810603eaadbb40968e6ffb01f78b6 Mon Sep 17 00:00:00 2001
+From: Mawwy <mavince145@gmail.com>
+Date: Sun, 2 Mar 2025 16:32:49 +0300
+Subject: [PATCH 1/2] Updated manual lifting cost multiplier to 400
+
+---
+ cargo_lift_calculator.py | 50 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 50 insertions(+)
+ create mode 100644 cargo_lift_calculator.py
+
+diff --git a/cargo_lift_calculator.py b/cargo_lift_calculator.py
+new file mode 100644
+index 0000000..88c2c81
+--- /dev/null
++++ b/cargo_lift_calculator.py
+@@ -0,0 +1,50 @@
++# cargo_lift_calculator.py
++#Version 1.0.1
++#Bug fix; Additional weight to 400
++
++class CargoLiftCalculator:
++    def __init__(self):
++        # Base cost based on weight
++        self.base_cost = {
++            50: 300,
++            100: 1000,
++            300: 2000
++        }
++
++    def calculate_cost(self, weight, floor, has_elevator):
++        # Calculate base cost based on weight
++        if weight <= 50:
++            cost = self.base_cost[50]
++        elif weight <= 100:
++            cost = self.base_cost[100]
++        elif weight <= 300:
++            cost = self.base_cost[300]
++        else:
++            raise ValueError("Weight exceeds maximum limit (300 kg).")
++
++        # If elevator is available, return base cost
++        if has_elevator:
++            return cost
++
++        # Calculate additional cost for manual lifting
++        additional_cost = 400 * (floor - 1) * (weight // 100 + 1)
++        total_cost = cost + additional_cost
++
++        return total_cost
++
++
++# Example usage
++if __name__ == "__main__":
++    calculator = CargoLiftCalculator()
++
++    # Input values
++    weight = float(input("Enter the weight of the cargo (kg): "))
++    floor = int(input("Enter the floor number: "))
++    has_elevator = input("Is there an elevator available? (yes/no): ").lower() == "yes"
++
++    # Calculate and display the cost
++    try:
++        total_cost = calculator.calculate_cost(weight, floor, has_elevator)
++        print(f"The total cost of lifting the cargo is: {total_cost} RUB")
++    except ValueError as e:
++        print(e)
+\ No newline at end of file
+-- 
+2.48.1.windows.1
+
